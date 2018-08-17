@@ -8,6 +8,6 @@ $CONFIG = [
     'dev' => [
         'dbName'    => 'ausbildungsnachweise',
         'user'      => 'root',
-        'password'  => ''
+        'password'  => 'root'
     ],
 ];
