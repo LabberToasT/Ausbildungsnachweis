@@ -27,19 +27,21 @@ $klein->respond(
 //######## Views ########
 //#######################
 
-// callback that is invoked when the main landing page is requested
+$testCallback = function (Request $request, Response $response, ServiceProvider $service) {
+    $testPdf = new PDFCreator();
+
+    $response->append($testPdf->getTestPdf());
+};
+
+$klein->respond('GET', "/test", $testCallback);
+
 $indexCallback = function (Request $request, Response $response, ServiceProvider $service) {
 
-    // load default page
     $defaultPage = new Template('views/index.html');
 
-    // append the page to the response
     $response->append($defaultPage->render());
 };
-$klein->respond(
-    'GET',
-    '/',
-    $indexCallback
-);
+
+$klein->respond('GET', '/', $indexCallback);
 
 $klein->dispatch();

@@ -1,6 +1,7 @@
 {
     "require": {
         "klein/klein": "^2.1",
-        "tecnickcom/tcpdf": "^6.2"
+        "tecnickcom/tcpdf": "^6.2",
+        "setasign/fpdf": "1.8.1"
     }
 }
